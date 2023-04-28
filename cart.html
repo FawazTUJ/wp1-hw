@@ -34,8 +34,8 @@
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">Product</a></li>
-              <li><a href="">Shopping Cart</a></li>
+              <li><a href="prodtest.html">Product</a></li>
+              <li><a href="cart.html">Shopping Cart</a></li>
               <li><a href="checkout.html">Checkout</a></li>
             </ul>
           </nav>
@@ -57,11 +57,7 @@
             <strong class="cart-total-title">Total</strong>
             <span class="cart-total-price">$0</span>
           </div>
-          <button
-            class="btn btn-primary btn-purchase"
-            onclick="checkfun()"
-            ="button"
-          >
+          <button class="btn btn-primary btn-purchase" onclick="checkfun()">
             PURCHASE
           </button>
         </section>
@@ -139,7 +135,8 @@
       }
       updateProducts();
       function checkfun() {
-        alert("Please go to checkout page to complete purchase!");
+        alert("You will be directed to the checkout page!");
+        location.replace("checkout.html");
       }
     </script>
   </body>

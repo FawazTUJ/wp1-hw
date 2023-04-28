@@ -6,19 +6,18 @@
 
 }
 
-/* Header */
 header{
     text-align: center;
     margin-top: 1em;
     height: 2em;
-    /* font-size: 1.2em; */
+    
 }
 
 header h1{
     letter-spacing: 0.04em;
 }
 
-/* Left */
+
 main{
     display: flex;
     color: grey;

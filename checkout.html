@@ -1,7 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Checkout</title>
-    <link rel="stylesheet" href="style2.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -9,185 +24,195 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- <script src="java.js"></script> -->
+
+    <title>Checkout</title>
   </head>
   <body>
-    <a href="index.html">Home</a>
-    <div class="row">
-      <div class="col-75">
-        <div class="container">
-          <form name="Form1" method="post" onsubmit="">
-            <div class="row">
-              <div class="col-50">
-                <h3>Billing Address</h3>
-                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                <input
-                  type="text"
-                  id="fname"
-                  name="ffname"
-                  placeholder="John M. Doe"
-                  required
-                />
-
-                <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder="john@example.com"
-                />
-                <label for="adr"
-                  ><i class="fa fa-address-card-o"></i> Address</label
-                >
-                <input
-                  type="text"
-                  id="adr"
-                  name="address"
-                  placeholder="542 W. 15th Street"
-                />
-                <label for="city"><i class="fa fa-institution"></i> City</label>
-                <input
-                  type="text"
-                  id="city"
-                  name="city"
-                  placeholder="New York"
-                />
-
-                <div class="row">
-                  <div class="col-50">
-                    <label for="state">State</label>
-                    <input
-                      type="text"
-                      id="state"
-                      name="state"
-                      placeholder="NY"
-                    />
-                  </div>
-                  <div class="col-50">
-                    <label for="zip">Zip</label>
-                    <input
-                      type="text"
-                      id="zip"
-                      name="zip"
-                      placeholder="10001"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-50">
-                <h3>Payment</h3>
-                <label for="fname">Accepted Cards</label>
-                <div class="icon-container">
-                  <i class="fa-brands fa-cc-visa" style="color: navy"></i>
-                  <i class="fa-brands fa-cc-amex" style="color: blue"></i>
-                  <i class="fa-brands fa-cc-mastercard" style="color: red"></i>
-                  <i class="fa-brands fa-cc-discover" style="color: orange"></i>
-                </div>
-                <label for="cname">Name on Card</label>
-                <input
-                  type="text"
-                  id="cname"
-                  name="cardname"
-                  placeholder="John More Doe"
-                />
-                <label for="ccnum">Credit card number</label>
-                <input
-                  type="text"
-                  id="ccnum"
-                  name="cardnumber"
-                  placeholder="1111-2222-3333-4444"
-                />
-                <label for="expmonth">Exp Month</label>
-                <input
-                  type="text"
-                  id="expmonth"
-                  name="expmonth"
-                  placeholder="September"
-                />
-
-                <div class="row">
-                  <div class="col-50">
-                    <label for="expyear">Exp Year</label>
-                    <input
-                      type="text"
-                      id="expyear"
-                      name="expyear"
-                      placeholder="2018"
-                    />
-                  </div>
-                  <div class="col-50">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="352" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <label>
-              <input type="checkbox" checked="checked" name="sameadr" />
-              Shipping address same as billing
-            </label>
-          </form>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <h2>Checkout</h2>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="prodtest.html">Product</a></li>
+              <li><a href="cart.html">Shopping Cart</a></li>
+              <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+          </nav>
+          <img src="cart.png" width="30px" height="30px" />
         </div>
       </div>
+    </div>
+    <div class="container">
+      <main>
+        <form name="myform" action="">
+          <section>
+            <h3>Contact information</h3>
 
-      <div class="col-25">
-        <div class="container">
-          <div class="cart-total"></div>
-          <strong class="cart-total-title">Total</strong>
-          <span class="cart-total-price">$0</span>
-          <input
-            type="submit"
-            onclick="validateForm()"
-            value="Confirm Purchase"
-            class="btn"
-          />
+            <label for="email">Email</label>
+            <nav class="input">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                placeholder="Enter your email..."
+              />
+            </nav>
+
+            <label for="phone">Phone</label>
+            <nav class="input">
+              <i class="fas fa-phone-alt"></i>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                required
+                placeholder="Enter your phone..."
+              />
+            </nav>
+          </section>
+
+          <section>
+            <h3>Shipping Address</h3>
+
+            <label for="name">Full name</label>
+            <nav class="input">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                placeholder="Enter your Full name..."
+              />
+            </nav>
+
+            <label for="address">Address</label>
+            <nav class="input">
+              <i class="fas fa-home"></i>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                required
+                placeholder="Enter your address..."
+              />
+            </nav>
+
+            <label for="city">City</label>
+            <nav class="input">
+              <i class="fas fa-city"></i>
+              <input
+                type="text"
+                name="city"
+                id="city"
+                required
+                placeholder="Enter your city..."
+              />
+            </nav>
+
+            <nav class="country-post">
+              <label for="country">Country</label>
+              <nav>
+                <i class="fas fa-globe-europe"></i>
+                <select name="country" id="country" required>
+                  <option value="Turkey">Turkey</option>
+                  <option value="Germany">Germany</option>
+                  <option value="USA">USA</option>
+                  <option value="Canada">Canada</option>
+                  <option value="UK">UK</option>
+                  <option value="Syria">Syria</option>
+                  <option value="Jordan">Jordan</option>
+                  <option value="Iraq">Iraq</option>
+                  <option value="Egypt">Egypt</option>
+                </select>
+              </nav>
+            </nav>
+
+            <nav class="country-post">
+              <label for="postCode">Post Code</label>
+              <nav>
+                <i class="fas fa-mail-bulk"></i>
+                <input
+                  type="text"
+                  name="postCode"
+                  id="postCode"
+                  required
+                  placeholder="Enter your postal code..."
+                />
+              </nav>
+            </nav>
+          </section>
+
+          <section class="accept">
+            <input type="checkbox" name="acceptBox" id="acceptBox" />
+            <label for="acceptBox">See this information next time</label>
+          </section>
+
+          <div class="footer-button">
+            <button onclick="required()">Confirm Purchase</button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <!----------Footer--------------->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Android and IOS</p>
+            <div class="app-logo">
+              <a href="https:www.play.google.com/"
+                ><img src="play-store.png"
+              /></a>
+              <a href="https://www.apple.com/app-store//"
+                ><img src="app-store.png"
+              /></a>
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="logo-white.jpg" />
+            <p>
+              Our Purpose Is To Satisfy The Customer With The Best Quality
+              Clothing Items.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3 class="">Follow Us</h3>
+            <li><a href="http://www.Facebook.com">Facebook</a></li>
+            <li><a href="http://www.twitter.com">Twitter</a></li>
+            <li><a href="http://www.instagram.com">Instagram</a></li>
+            <li><a href="http://www.youtube.com">YouTube</a></li>
+          </div>
         </div>
       </div>
     </div>
     <script>
-      function validateForm() {
-        let x = document.forms["Form1"]["ffname"].value;
-        let y = document.forms["Form1"]["email"].value;
-        let z = document.forms["Form1"]["address"].value;
-        let x2 = document.forms["Form1"]["city"].value;
-        let x3 = document.forms["Form1"]["state"].value;
-        let x4 = document.forms["Form1"]["zip"].value;
-        let x5 = document.forms["Form1"]["cardname"].value;
-        let x6 = document.forms["Form1"]["cardnumber"].value;
-        let x7 = document.forms["Form1"]["expyear"].value;
-        let x8 = document.forms["Form1"]["cvv"].value;
+      function required() {
+        var x1 = document.forms["myform"]["email"].value;
+        var x2 = document.forms["myform"]["phone"].value;
+        var x3 = document.forms["myform"]["name"].value;
+        var x4 = document.forms["myform"]["address"].value;
+        var x5 = document.forms["myform"]["city"].value;
+        var x6 = document.forms["myform"]["postCode"].value;
 
         if (
-          x == "" ||
-          y == "" ||
-          z == "" ||
-          x2 == "" ||
-          x3 == "" ||
-          x4 == "" ||
-          x5 == "" ||
-          x6 == "" ||
-          x7 == "" ||
-          x8 == ""
+          x1 !== "" &&
+          x2 !== "" &&
+          x3 !== "" &&
+          x4 !== "" &&
+          x5 !== "" &&
+          x6 !== ""
         ) {
-          alert(
-            "Some informations are missing. Please fill out the entire form, empty values are not allowed!"
-          );
-        } else {
-          alert("Purchase Succesful, Thank you for using our store!");
+          alert("Purchase Succesful! Thank you for using our store.");
         }
       }
-      function updateProducts() {
-        var products = JSON.parse(localStorage.getItem("products"));
-        var total = 0;
-        for (var product of products) {
-          var { imageSrc, title, price } = product;
-          total += parseFloat(price.substr(1));
-          document.getElementsByClassName("cart-total-price")[0].innerText =
-            "$" + total.toFixed(2);
-        }
-      }
-
-      updateProducts();
     </script>
   </body>
 </html>

@@ -93,17 +93,6 @@ function addToCartClicked(event) {
   alert(
     "Product added to shopping cart! Navigate to shopping cart to checkout."
   );
-
-  // var cartItems = document.getElementsByClassName('cart-items')[0]
-  // var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-  // for (var i = 0; i < cartItemNames.length; i++) {
-  //     if (cartItemNames[i].innerText == title) {
-  //         alert('This item is already added to the cart')
-  //         return
-  //     }
-  // }
-
-  // updateCartTotal()
 }
 
 function updateCartTotal() {
