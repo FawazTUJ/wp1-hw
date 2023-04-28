@@ -77,6 +77,10 @@ p{
 .btn:hover{
     background: #563434;
 }
+.btn:disabled {
+    background: black;
+    cursor:not-allowed;
+}
 .btn-play {
     display: block;
     margin: 0 auto;
@@ -101,6 +105,9 @@ p{
 }
 body{
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .header .row{
     margin-top: 70px;
@@ -195,11 +202,10 @@ small{
 }
 .footer{
     background: #000;
-    
+    margin-top: auto;
     color: #8a8a88;
     font-size: 14px;
     padding: 60px 0 20px;
-    
 }
 .section-header {
     font-family: 'Metal Mania', cursive;

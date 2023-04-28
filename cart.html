@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <style>
-      .footer {
+      /* .footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-      }
+      } */
     </style>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,7 +29,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="java.js"></script>
+    <!-- <script src="java.js"></script> -->
 
     <title>Shopping Cart</title>
   </head>
@@ -60,7 +60,7 @@
           <div class="cart-row">
             <span class="cart-item cart-header cart-column">ITEM</span>
             <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            <span class="cart-quantity cart-header cart-column"></span>
           </div>
           <div class="cart-items"></div>
           <div class="cart-total">
@@ -106,5 +106,44 @@
         </div>
       </div>
     </div>
+    <script>
+      function removeCartItem(event) {
+        var parentDiv = event.target.parentElement.parentElement;
+        var imgSrc = parentDiv.getElementsByTagName("img")[0].src;
+        var products = JSON.parse(localStorage.getItem("products"));
+        products = products.filter((prod) => prod.imageSrc != imgSrc);
+        localStorage.setItem("products", JSON.stringify(products));
+        window.location.reload();
+      }
+
+      function updateProducts() {
+        var products = JSON.parse(localStorage.getItem("products"));
+        var total = 0;
+        for (var product of products) {
+          var { imageSrc, title, price } = product;
+          total += parseFloat(price.substr(1));
+          var cartRow = document.createElement("div");
+          cartRow.classList.add("cart-row");
+          var cartRowContents = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <span class="cart-price cart-column">${price}</span>
+        <div class="cart-quantity cart-column">
+            <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>`;
+          var cartItems = document.getElementsByClassName("cart-items")[0];
+          cartRow.innerHTML = cartRowContents;
+          cartItems.append(cartRow);
+          cartRow
+            .getElementsByClassName("btn-danger")[0]
+            .addEventListener("click", removeCartItem);
+        }
+        document.getElementsByClassName("cart-total-price")[0].innerText =
+          "$" + total.toFixed(2);
+      }
+      updateProducts();
+    </script>
   </body>
 </html>
