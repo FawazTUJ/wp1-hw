@@ -189,7 +189,7 @@ h4{
     color:#ff523b
 }
 .col-4:hover{
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 .offer{
     background: radial-gradient(gold,#ffd6d6);
