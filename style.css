@@ -124,6 +124,9 @@ body{
     text-align: center;
     
 }
+.col-3 h2{
+    text-align: center;
+}
 .shop-item-price{
     font-weight: bold; 
      text-align: right;
@@ -353,3 +356,6 @@ small{
     color: #333;
     font-size: 1.1em;
 }
+
+
+
